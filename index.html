@@ -83,7 +83,7 @@
             <button class="btn-primary" onclick="scrollToForm()">Записаться на занятие</button>
         </div>
     </section>
-    <section class="services">
+   section class="services">
         <div class="container">
             <h2 class="section-title">Наши направления</h2>
             <div class="services-grid">
@@ -106,14 +106,19 @@
             </div>
         </div>
     </section>
+
     <section class="pricing">
         <div class="container">
-            <h2 class="section-title">Стоимость абонементов</h2>
+            <h2 class="section-title">Стоимость услуг и абонементов</h2>
+           
             <div class="table-wrapper">
                 <table>
                     <thead>
                         <tr>
-                            <th>Вид абонемента / Услуга</th>
+                            <th colspan="3" style="background-color: var(--emerald-light); text-align: center;">Групповые занятия<br><small>(Гимнастика от 3 до 14 лет, Подготовка к школе, Фитнес/Йога/Пилатес для взрослых)</small></th>
+                        </tr>
+                        <tr>
+                            <th>Вид абонемента</th>
                             <th>Стандартная цена</th>
                             <th>Цена в день пробы <span class="promo-badge">-10%</span></th>
                         </tr>
@@ -123,12 +128,52 @@
                         <tr><td>Групповой абонемент (8 занятий)</td><td>8 700 ₽</td><td><strong>7 830 ₽</strong></td></tr>
                         <tr><td>Групповой абонемент (12 занятий)</td><td>10 900 ₽</td><td><strong>9 810 ₽</strong></td></tr>
                         <tr><td>Групповой абонемент (16 занятий)</td><td>12 900 ₽</td><td><strong>11 610 ₽</strong></td></tr>
-                        <tr><td>Диагностика нейропсихолога / Тест Векслера</td><td>5 000 ₽</td><td>—</td></tr>
-                        <tr><td>Консультация психотерапевта / Семейная терапия</td><td>4 500 ₽ / 6 750 ₽</td><td>—</td></tr>
                     </tbody>
                 </table>
             </div>
-            <center><button class="btn-primary" onclick="scrollToForm()">Приобрести абонемент со скидкой</button></center>
+
+            <div class="table-wrapper" style="margin-top: 30px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" style="background-color: var(--emerald-light); text-align: center;">Индивидуальные занятия и диагностика</th>
+                        </tr>
+                        <tr>
+                            <th>Услуга / Прием специалиста</th>
+                            <th>Стоимость</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Разовое индивидуальное занятие (Логопед)</td><td><strong>3 500 ₽</strong></td></tr>
+                        <tr><td>Разовое индивидуальное занятие (Нейропсихолог)</td><td><strong>3 500 ₽</strong></td></tr>
+                        <tr><td>Разовое индивидуальное занятие (АВА-терапия)</td><td><strong>3 500 ₽</strong></td></tr>
+                        <tr><td>Диагностика нейропсихолога / Комплексный Тест Векслера</td><td><strong>5 000 ₽</strong></td></tr>
+                        <tr><td>Консультация психотерапевта / Семейная терапия</td><td><strong>4 500 ₽ / 6 750 ₽</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-wrapper" style="margin-top: 30px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" style="background-color: var(--emerald-light); text-align: center;">Программы обучения и домашнего сопровождения</th>
+                        </tr>
+                        <tr>
+                            <th>Наименование курса / Формат поддержки</th>
+                            <th>Стоимость</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Индивидуальный конспект занятий для родителей по их ребёнку (План на 1 месяц)</td><td><strong>10 000 ₽</strong></td></tr>
+                        <tr><td>Курс обучения для родителей в электронном виде по направлению: Логопед</td><td><strong>50 000 ₽</strong></td></tr>
+                        <tr><td>Курс обучения для родителей в电子нном виде по направлению: Нейропсихолог</td><td><strong>50 000 ₽</strong></td></tr>
+                        <tr><td>Курс обучения для родителей в электронном виде по направлению: АВА-терапия</td><td><strong>50 000 ₽</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <center style="margin-top: 25px;"><button class="btn-primary" onclick="scrollToForm()">Записаться и получить скидку</button></center>
         </div>
     </section>
     <section class="rules">
@@ -150,6 +195,7 @@
             </div>
         </div>
     </section>
+
     <section class="form-section" id="register-form">
         <div class="container">
             <h2 class="section-title">Регистрация нового клиента</h2>
@@ -184,6 +230,7 @@
             </div>
         </div>
     </section>
+
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -196,6 +243,7 @@
             </div>
         </div>
     </footer>
+
     <script>
         function scrollToForm() {
             const formSection = document.getElementById('register-form');
