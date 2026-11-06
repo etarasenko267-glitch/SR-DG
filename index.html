@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Центр развития ребенка «Слово и речь» & Гимнастика «Dreamgym»</title>
-    <link href="https://googleapis.com" rel="stylesheet">
     <style>
         :root {
             --emerald: #1b5e20;
@@ -14,351 +13,57 @@
             --bg-light: #f4f7f4;
             --text-dark: #222;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-dark);
-            background-color: #fff;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: var(--emerald);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 3px solid var(--gold);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .header-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-block {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-circle {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--gold), #aa7c11);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-weight: bold;
-            color: var(--emerald);
-            font-size: 18px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        .brand-names h1 {
-            color: #fff;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .brand-names p {
-            color: var(--gold);
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .header-contacts a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        .header-contacts a:hover {
-            color: var(--gold);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(27, 94, 32, 0.95)), url('https://unsplash.com') no-repeat center center/cover;
-            padding: 100px 0;
-            text-align: center;
-            color: #fff;
-        }
-
-        .hero h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--gold);
-            color: var(--emerald);
-            padding: 15px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--emerald);
-            color: var(--gold);
-            border-color: var(--gold);
-            transform: translateY(-2px);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background-color: var(--bg-light);
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            color: var(--emerald);
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--gold);
-            margin: 10px auto 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            border-top: 5px solid var(--emerald);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card h3 {
-            color: var(--emerald);
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 80px 0;
-        }
-
-        .table-wrapper {
-            overflow-x: auto;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            background: #fff;
-        }
-
-        th, td {
-            padding: 15px 20px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: var(--emerald);
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-        }
-
-        tr:nth-child(even) {
-            background-color: var(--bg-light);
-        }
-
-        .promo-badge {
-            background-color: var(--gold);
-            color: var(--emerald);
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 12px;
-        }
-
-        /* Rules Section */
-        .rules {
-            padding: 80px 0;
-            background-color: var(--emerald);
-            color: #fff;
-        }
-
-        .rules .section-title {
-            color: var(--gold);
-        }
-
-        .rules-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .rule-item {
-            margin-bottom: 25px;
-            padding-left: 20px;
-            border-left: 3px solid var(--gold);
-        }
-
-        .rule-item h4 {
-            font-size: 18px;
-            color: var(--gold);
-            margin-bottom: 5px;
-        }
-
-        /* Form / Modal Section */
-        .form-section {
-            padding: 80px 0;
-            background-color: var(--bg-light);
-            display: none; /* Скрыта изначально, открывается по кнопке */
-        }
-
-        .form-section.active {
-            display: block;
-        }
-
-        .form-box {
-            background: #fff;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 2px solid var(--gold);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 15px;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--emerald);
-            box-shadow: 0 0 5px rgba(46, 125, 50, 0.3);
-        }
-
-        .form-box button {
-            width: 100%;
-            border: none;
-            padding: 15px;
-            font-size: 16px;
-        }
-
-        /* Contacts Footer */
-        footer {
-            background-color: #111;
-            color: #ccc;
-            padding: 60px 0 30px 0;
-            text-align: center;
-        }
-
-        .footer-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .footer-grid p {
-            font-size: 16px;
-        }
-
-        .footer-grid strong {
-            color: #fff;
-        }
-
-        .copyright {
-            border-top: 1px solid #333;
-            padding-top: 20px;
-            font-size: 13px;
-        }
-
-        @media (max-width: 768px) {
-            .header-flex {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-            .hero h2 { font-size: 30px; }
-            .form-box { padding: 20px; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; color: var(--text-dark); background-color: #fff; line-height: 1.6; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        header { background-color: var(--emerald); padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-block { display: flex; align-items: center; gap: 15px; }
+        .logo-circle { width: 50px; height: 50px; background: linear-gradient(135deg, var(--gold), #aa7c11); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--emerald); font-size: 18px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .brand-names h1 { color: #fff; font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .brand-names p { color: var(--gold); font-size: 12px; font-weight: 600; }
+        .header-contacts a { color: #fff; text-decoration: none; font-weight: 700; font-size: 16px; transition: color 0.3s; }
+        .header-contacts a:hover { color: var(--gold); }
+        .hero { background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(27, 94, 32, 0.95)); padding: 100px 0; text-align: center; color: #fff; }
+        .hero h2 { font-size: 38px; color: var(--gold); margin-bottom: 20px; }
+        .hero p { font-size: 18px; max-width: 800px; margin: 0 auto 30px auto; }
+        .btn-primary { display: inline-block; background-color: var(--gold); color: var(--emerald); padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; border: 2px solid transparent; cursor: pointer; }
+        .btn-primary:hover { background-color: var(--emerald); color: var(--gold); border-color: var(--gold); transform: translateY(-2px); }
+        .services { padding: 80px 0; background-color: var(--bg-light); }
+        .section-title { text-align: center; font-size: 32px; color: var(--emerald); margin-bottom: 50px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background-color: var(--gold); margin: 10px auto 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-card { background: #fff; padding: 30px; border-radius: 12px; border-top: 5px solid var(--emerald); box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-card h3 { color: var(--emerald); margin-bottom: 15px; font-size: 20px; }
+        .pricing { padding: 80px 0; }
+        .table-wrapper { overflow-x: auto; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        table { width: 100%; border-collapse: collapse; text-align: left; background: #fff; }
+        th, td { padding: 15px 20px; border-bottom: 1px solid #ddd; }
+        th { background-color: var(--emerald); color: #fff; text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px; }
+        tr:nth-child(even) { background-color: var(--bg-light); }
+        .promo-badge { background-color: var(--gold); color: var(--emerald); padding: 3px 8px; border-radius: 4px; font-weight: 700; font-size: 12px; }
+        .rules { padding: 80px 0; background-color: var(--emerald); color: #fff; }
+        .rules .section-title { color: var(--gold); }
+        .rules-list { max-width: 800px; margin: 0 auto; }
+        .rule-item { margin-bottom: 25px; padding-left: 20px; border-left: 3px solid var(--gold); }
+        .rule-item h4 { font-size: 18px; color: var(--gold); margin-bottom: 5px; }
+        .form-section { padding: 80px 0; background-color: var(--bg-light); border-top: 3px solid var(--gold); }
+        .form-box { background: #fff; max-width: 600px; margin: 0 auto; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid var(--gold); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
+        .form-group input { width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit; font-size: 15px; }
+        .form-group input:focus { outline: none; border-color: var(--emerald); box-shadow: 0 0 5px rgba(46, 125, 50, 0.3); }
+        .form-box button { width: 100%; border: none; padding: 15px; font-size: 16px; font-weight: bold; }
+        footer { background-color: #111; color: #ccc; padding: 60px 0 30px 0; text-align: center; }
+        .footer-grid { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
+        .footer-grid p { font-size: 16px; }
+        .footer-grid strong { color: #fff; }
+        .copyright { border-top: 1px solid #333; padding-top: 20px; font-size: 13px; }
+        @media (max-width: 768px) { .header-flex { flex-direction: column; gap: 15px; text-align: center; } .hero h2 { font-size: 28px; } .form-box { padding: 20px; } }
     </style>
 </head>
 <body>
-
-    <!-- Шапка сайта -->
     <header>
         <div class="container header-flex">
             <div class="logo-block">
@@ -368,129 +73,148 @@
                     <p>Центр гимнастики & фитнеса Dreamgym</p>
                 </div>
             </div>
-            <div class="header-contacts">
-                <a href="tel:+79953170741">📞 8 (995) 317-07-41</a>
-            </div>
+            <div class="header-contacts"><a href="tel:+79953170741">📞 8 (995) 317-07-41</a></div>
         </div>
     </header>
-
-    <!-- Главный баннер -->
     <section class="hero">
         <div class="container">
             <h2>Умное развитие и спортивный характер</h2>
             <p>Комплексный подход к развитию способностей вашего ребенка и поддержанию отличной физической формы для всей семьи в Новороссийске.</p>
             <button class="btn-primary" onclick="scrollToForm()">Записаться на занятие</button>
         </div>
-📚 Подготовка к школе
-Утренние комплексные занятия 3 раза в неделю. Обучение чтению, письму, математике и бережная психологическая адаптация к школе.
-
-🧘‍♀️ Взрослый блок
-Фитнес, йога и пилатес. Утренние группы (09:00) и вечерние (18:00) проходят параллельно с детскими занятиями!
-
-🧠 Специалисты и диагностика
-Индивидуальные приемы логопеда, нейропсихолога и АВА-терапевта. Комплексный интеллектуальный Тест Векслера.
-
-
-Стоимость абонементов
-
-Вид абонемента / Услуга
-
-Стандартная цена
-
-Цена в день пробы -10%
-
-Групповой абонемент (4 занятия)
-
-5 900 ₽  
-
-5 310 ₽
-
-Групповой абонемент (8 занятий)
-
-8 700 ₽
-
-7 830 ₽
-
-Групповой абонемент (12 занятий)
-
-10 900 ₽
-
-9 810 ₽
-
-Групповой абонемент (16 занятия)
-
-12 900 ₽
-
-11 610 ₽
-
-Диагностика нейропсихолога / Тест Векслера
-
-5 000 ₽
-
-—
-
-Консультация психотерапевта / Семейная терапия
-
-4 500 ₽ / 6 750 ₽
-
-—
-
-Приобрести абонемент со скидкой
-
-Важные правила центра
-
-⏳ Срок действия абонемента
-Любой абонемент действует строго 30 календарных дней с момента активации. По истечении срока неиспользованные уроки аннулируются.
-
-✖ Правила переносов и отмен
-Система бесплатных отмен отсутствует. Занятия, пропущенные по инициативе клиента, сгорают. Сохранить баланс можно только через услугу платной заморозки (15 000 ₽).
-
-👕 Требования к форме одежды
-На гимнастику дети допускаются строго по дресс-коду: чистая белая футболка, чёрные спортивные шорты, чёрные носочки.
-
-
-Регистрация нового клиента
-
-ФИО Родителя (законного представителя) *
-
-Дата рождения родителя *
-
-ФИО Ребёнка *
-
-Дата рождения ребёнка *
-
-Электронная почта *
-
-Мобильный телефон *
-
-Отправить анкету и записаться
-
-
-📍 Адрес центра: г. Новороссийск, ул. Бута, д. 15
-📞 Телефон рецепции: 8 (995) 317-07-41 (Запись и консультации ежедневно)
-⚠️ Отправляя анкету, вы даете согласие на обработку данных по ФЗ №152 и акцептуете Договор оферты.
-
-© 2026 ЦРР «Слово и речь» & Центр гимнастики «Dreamgym». Все права защищены.
-
-function scrollToForm() {
-const formSection = document.getElementById('register-form');
-formSection.scrollIntoView({ behavior: 'smooth' });
-}
-
-function handleFormSubmit(event) {
-event.preventDefault();
-
-const formData = {
-parentName: document.getElementById('parentName').value,
-parentDob: document.getElementById('parentDob').value,
-childName: document.getElementById('childName').value,
-childDob: document.getElementById('childDob').value,
-email: document.getElementById('clientEmail').value,
-phone: document.getElementById('clientPhone').value
-};
-
-alert(Уважаемый(а) ${formData.parentName}!\nВаша электронная анкета клиента успешно зарегистрирована в системе центра.\nДанные ребенка (${formData.childName}) внесены.\nАдминистратор свяжется с вами по телефону ${formData.phone} в течение 15 минут.);
-
-document.getElementById('clientForm').reset();
-window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+    </section>
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Наши направления</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🤸‍♂️ Детская гимнастика</h3>
+                    <p>Для детей от 3 до 14 лет. Формируем мышечный корсет, идеальную осанку, координацию движений и железную дисциплину.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📚 Подготовка к школе</h3>
+                    <p>Утренние комплексные занятия 3 раза в неделю. Обучение чтению, письму, математике и бережная психологическая адаптация к школе.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🧘‍♀️ Взрослый блок</h3>
+                    <p>Фитнес, йога и пилатес. Утренние группы (09:00) и вечерние (18:00) проходят параллельно с детскими занятиями!</p>
+                </div>
+                <div class="service-card">
+                    <h3>🧠 Специалисты и диагностика</h3>
+                    <p>Индивидуальные приемы логопеда, нейропсихолога и АВА-терапевта. Комплексный интеллектуальный Тест Векслера.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Стоимость абонементов</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Вид абонемента / Услуга</th>
+                            <th>Стандартная цена</th>
+                            <th>Цена в день пробы <span class="promo-badge">-10%</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Групповой абонемент (4 занятия)</td><td>5 900 ₽</td><td><strong>5 310 ₽</strong></td></tr>
+                        <tr><td>Групповой абонемент (8 занятий)</td><td>8 700 ₽</td><td><strong>7 830 ₽</strong></td></tr>
+                        <tr><td>Групповой абонемент (12 занятий)</td><td>10 900 ₽</td><td><strong>9 810 ₽</strong></td></tr>
+                        <tr><td>Групповой абонемент (16 занятий)</td><td>12 900 ₽</td><td><strong>11 610 ₽</strong></td></tr>
+                        <tr><td>Диагностика нейропсихолога / Тест Векслера</td><td>5 000 ₽</td><td>—</td></tr>
+                        <tr><td>Консультация психотерапевта / Семейная терапия</td><td>4 500 ₽ / 6 750 ₽</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <center><button class="btn-primary" onclick="scrollToForm()">Приобрести абонемент со скидкой</button></center>
+        </div>
+    </section>
+    <section class="rules">
+        <div class="container">
+            <h2 class="section-title">Важные правила центра</h2>
+            <div class="rules-list">
+                <div class="rule-item">
+                    <h4>⏳ Срок действия абонемента</h4>
+                    <p>Любой абонемент действует строго 30 календарных дней с момента активации. По истечении срока неиспользованные уроки аннулируются.</p>
+                </div>
+                <div class="rule-item">
+                    <h4>✖ Правила переносов и отмен</h4>
+                    <p>Система бесплатных отмен отсутствует. Занятия, пропущенные по инициативе клиента, сгорают. Сохранить баланс можно только через услугу платной заморозки (15 000 ₽).</p>
+                </div>
+                <div class="rule-item">
+                    <h4>👕 Требования к форме одежды</h4>
+                    <p>На гимнастику дети допускаются строго по дресс-коду: чистая белая футболка, чёрные спортивные шорты, чёрные носочки.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="form-section" id="register-form">
+        <div class="container">
+            <h2 class="section-title">Регистрация нового клиента</h2>
+            <div class="form-box">
+                <form id="clientForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="parentName">ФИО Родителя (законного представителя) *</label>
+                        <input type="text" id="parentName" required placeholder="Иванова Анна Ивановна">
+                    </div>
+                    <div class="form-group">
+                        <label for="parentDob">Дата рождения родителя *</label>
+                        <input type="date" id="parentDob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="childName">ФИО Ребёнка *</label>
+                        <input type="text" id="childName" required placeholder="Иванов Максим Сергеевич">
+                    </div>
+                    <div class="form-group">
+                        <label for="childDob">Дата рождения ребёнка *</label>
+                        <input type="date" id="childDob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientEmail">Электронная почта *</label>
+                        <input type="email" id="clientEmail" required placeholder="example@mail.ru">
+                    </div>
+                    <div class="form-group">
+                        <label for="clientPhone">Мобильный телефон *</label>
+                        <input type="tel" id="clientPhone" required placeholder="+7 (999) 000-00-00">
+                    </div>
+                    <button type="submit" class="btn-primary">Отправить анкету и записаться</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <p>📍 <strong>Адрес центра:</strong> г. Новороссийск, ул. Бута, д. 15</p>
+                <p>📞 <strong>Телефон рецепции:</strong> 8 (995) 317-07-41 (Запись и консультации ежедневно)</p>
+                <p>⚠️ Отправляя анкету, вы даете согласие на обработку данных по ФЗ №152 и акцептуете Договор оферты.</p>
+            </div>
+            <div class="copyright">
+                &copy; 2026 ЦРР «Слово и речь» & Центр гимнастики «Dreamgym». Все права защищены.
+            </div>
+        </div>
+    </footer>
+    <script>
+        function scrollToForm() {
+            const formSection = document.getElementById('register-form');
+            formSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const formData = {
+                parentName: document.getElementById('parentName').value,
+                parentDob: document.getElementById('parentDob').value,
+                childName: document.getElementById('childName').value,
+                childDob: document.getElementById('childDob').value,
+                email: document.getElementById('clientEmail').value,
+                phone: document.getElementById('clientPhone').value
+            };
+            alert(`Уважаемый(а) ${formData.parentName}!\nВаша электронная анкета клиента успешно зарегистрирована в системе центра.\nДанные ребенка (${formData.childName}) внесены.\nАдминистратор свяжется с вами по телефону ${formData.phone} в течение 15 минут.`);
+            document.getElementById('clientForm').reset();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
